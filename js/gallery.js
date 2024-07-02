@@ -66,3 +66,10 @@ function createMarkup(images) {
 const gallery = document.querySelector(".gallery");
 
 gallery.insertAdjacentHTML("beforeend", createMarkup(images));
+
+const handleClick = (event) => {
+  event.preventDefault();
+  console.log(event.target.dataset.source);
+};
+
+gallery.addEventListener("click", handleClick);
