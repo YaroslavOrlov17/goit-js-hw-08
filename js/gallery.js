@@ -69,7 +69,12 @@ gallery.insertAdjacentHTML("beforeend", createMarkup(images));
 
 const handleClick = (event) => {
   event.preventDefault();
-  console.log(event.target.dataset.source);
+  const source = event.target.dataset.source;
+
+  console.log(source);
+
+  const instance = basicLightbox.create(source);
+  instance.show();
 };
 
 gallery.addEventListener("click", handleClick);
