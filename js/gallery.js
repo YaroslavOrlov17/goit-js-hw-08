@@ -71,10 +71,17 @@ const handleClick = (event) => {
   event.preventDefault();
   const source = event.target.dataset.source;
 
-  const instance = basicLightbox.create(`
+  if (event.target.tagName !== "IMG") {
+    return
+  }
+  else {
+    const instance = basicLightbox.create(`
     <img src="${source}" width="800" height="600">
 `);
-  instance.show();
-};
+    instance.show();
+  };
+}
+
+
 
 gallery.addEventListener("click", handleClick);
