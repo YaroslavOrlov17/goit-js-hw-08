@@ -71,9 +71,9 @@ const handleClick = (event) => {
   event.preventDefault();
   const source = event.target.dataset.source;
 
-  console.log(source);
-
-  const instance = basicLightbox.create(source);
+  const instance = basicLightbox.create(`
+    <img src="${source}" width="800" height="600">
+`);
   instance.show();
 };
 
